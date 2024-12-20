@@ -71,15 +71,24 @@ In your project directory, create a file named eternal.ts and add the following 
 
 ```typescript
 import { Eternal } from '@eternal-js/core';
-import { GoogleAnalyticsAdapter } from '@eternal-js/google-analytics-adapter';
-import { FirebaseAuthAdapter } from '@eternal-js/firebase-auth-adapter';
+import { AnalyticsModule } from '@eternal-js/analytics';
+import { AuthModule } from '@eternal-js/auth';
+import { MixPanelAdapter } from '@eternal-js/mixpanel-adapter';
+import { AuthJsAdapter } from '@eternal-js/auth-adapter';
 
 const eternal = new Eternal({
   analytics: new AnalyticsModule({
-    adapter: new MixPanelAdapter({ apiKey: 'your-google-api-key' }),
+    adapter: new MixPanelAdapter({
+      config: { apiKey: 'your-mixpanel-api-key' },
+      extension: (mixpanel: Mixpanel) => ({
+        advancedUseCase1() {
+          mixpanel.track('Custom Event', { data: 'example' });
+        },
+      }),
+    }),
   }),
   auth: new AuthModule({
-    adapter: new AuthJsAdapter({ apiKey: 'your-firebase-api-key' }),
+    adapter: new AuthJsAdapter({ apiKey: 'your-authjs-api-key' }),
   }),
 });
 
@@ -88,7 +97,6 @@ export default {
   analytics: eternal.analytics,
   auth: eternal.auth,
 };
-
 ```
 
 #### **Using the SDK**
@@ -96,13 +104,19 @@ export default {
 ```typescript
 import { analytics, auth } from './eternal';
 
-// Track an event
-analytics?.track('user_signup', { method: 'email' });
+// Track an event with relevant metadata
+analytics?.track('user_signup', { method: 'email', plan: 'premium' });
 
-// Authenticate a user
+// Use a custom advanced use case
+analytics?.extension?.advancedUseCase1();
+
+// Authenticate a user with email and password
 auth?.signInWithEmailAndPassword('user@example.com', 'securePassword');
 
-Any many more..
+// Log out the user when needed
+auth?.signOut();
+
+// More capabilities are just a method call away...
 ```
 
 
