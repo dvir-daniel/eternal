@@ -75,6 +75,9 @@ import { MixPanelAdapter } from '@eternal-js/mixpanel-adapter';
 import { AuthJsAdapter } from '@eternal-js/auth-adapter';
 
 const eternal = new Eternal({
+  auth: new AuthModule({
+    adapter: new AuthJsAdapter({ apiKey: 'your-authjs-api-key' }),
+  }),
   analytics: new AnalyticsModule({
     adapter: new MixPanelAdapter({
       config: { apiKey: 'your-mixpanel-api-key' },
@@ -84,9 +87,6 @@ const eternal = new Eternal({
         },
       }),
     }),
-  }),
-  auth: new AuthModule({
-    adapter: new AuthJsAdapter({ apiKey: 'your-authjs-api-key' }),
   }),
 });
 
