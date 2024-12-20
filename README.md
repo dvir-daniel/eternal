@@ -154,12 +154,12 @@ auth?.signOut();
 Browser Environment:
 
 | Module         | Supported Providers                             |
-|----------------|-------------------------------------------------|
-| Analytics      | Google Analytics, Mixpanel, Segment             |
-| Auth           | Authjs, FirebaseAuth, Auth0, Clerk, Stack-Auth  |
-| Storage        | AWS S3, Google Cloud Storage, Azure Blob        |
-| Payments       | Stripe, PayPal, Square                          |
-| HTTP Clients   | `axios`, `node-fetch`, `superagent`, `request`  |                                                                                                                                                                    
+|----------------|-----------------------------------------------------------|
+| Analytics      | Google Analytics, Mixpanel, Segment                       |
+| Auth           | Authjs, Supabase, FirebaseAuth, Auth0, Clerk, Stack-Auth  |
+| Storage        | AWS S3, Google Cloud Storage, Azure Blob                  |
+| Payments       | Stripe, PayPal, Square                                    |
+| HTTP Clients   | `axios`, `node-fetch`, `superagent`, `request`            |                                                                                                                                                                    
 
 **Node.js Environment:**
 
