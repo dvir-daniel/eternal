@@ -6,7 +6,7 @@
 <br />
 
 <h1>Eternal: Make Your Dependencies Eternal</h1>
-<h1>One SDK to Simplify Integrations, Swap Providers Instantly, and Say Goodbye to Breaking Changes.<br />(In Construction)</h1>
+<h1>Simplify Integrations, Swap Providers Instantly, and Say Goodbye to Breaking Changes.<br />(In Construction)</h1>
 
 
 Eternal is a modular framework that empowers developers to integrate third-party services effortlessly, switch providers without disruption, and ensure your app stays future-proof—no matter how the APIs or technologies evolve. It enables developers to interact with a single unified API, allowing for seamless upgrades, provider switching, and improved developer experience.
