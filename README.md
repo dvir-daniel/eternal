@@ -69,12 +69,15 @@ Here is an example of how to use Eternal:
 
 In your project directory, create a file named eternal.ts and add the following code:
 
+Browser Environment:
+
 ```typescript
 import { Eternal, AnalyticsModule, AuthModule } from '@eternal-js/core';
 import { MixPanelAdapter } from '@eternal-js/mixpanel-adapter';
 import { AuthJsAdapter } from '@eternal-js/auth-adapter';
 
 const eternal = new Eternal({
+  // Browser Modules
   auth: new AuthModule({
     adapter: new AuthJsAdapter({ apiKey: 'your-authjs-api-key' }),
   }),
@@ -90,12 +93,40 @@ const eternal = new Eternal({
   }),
 });
 
-// Default export with custom named properties for easier imports
+// Export the configured modules
 export default {
   analytics: eternal.analytics,
   auth: eternal.auth,
 };
 ```
+
+Node.js Environment:
+
+```typescript
+import { Eternal, DatabaseModule } from '@eternal-js/core';
+import { RedisAdapter } from '@eternal-js/redis-adapter';
+import { PostgresAdapter } from '@eternal-js/postgres-adapter';
+
+const eternal = new Eternal({
+  // Node Modules
+  databases: {
+    nosql: new DatabaseModule({
+      adapter: new RedisAdapter({ apiKey: 'your-redis-api-key' }),
+    }),
+    sql: new DatabaseModule({
+      adapter: new PostgresAdapter({
+        connectionString: 'your-postgres-connection-string',
+      }),
+    }),
+  },
+});
+
+// Export the configured modules
+export default {
+  databases: eternal.databases,
+};
+```
+
 
 #### **Using the SDK**
 
