@@ -11,6 +11,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "dependencies": {
+    "@eternal-js/core": "workspace:*"
+  },
   "devDependencies": {
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",

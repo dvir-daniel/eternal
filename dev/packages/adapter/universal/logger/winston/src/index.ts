@@ -1,5 +1,5 @@
 import { Logger as WinstonLogger, format } from 'winston';
-import { LoggerAdapter, LogLevel, LogEntry, LogFormatter, LoggerErrorHandler, Transport } from './logger-global';
+import { LoggerAdapter, LogLevel, LogEntry, LogFormatter, LoggerErrorHandler, Transport } from '@eternal-js/core';
 import winston = require('winston');
 
 const LOG_LEVEL_TO_WINSTON: Record<LogLevel, string> = {
@@ -25,7 +25,7 @@ const WINSTON_TO_LOG_LEVEL: Record<string, LogLevel> = {
 export class WinstonLoggerAdapter implements LoggerAdapter {
   private winstonLogger: WinstonLogger;
   private currentLevel: LogLevel = LogLevel.Info;
-  private transportsList: { original: Transport; winstonTransport: winston.Transport }[] = [];
+  private transportsList: { original: Transport; winstonTransport: winston.transport }[] = [];
   private formattersList: LogFormatter[] = [];
   private errorHandler?: LoggerErrorHandler;
   private prefix?: string;
@@ -184,8 +184,8 @@ export class WinstonLoggerAdapter implements LoggerAdapter {
     );
   }
 
-  private createWinstonTransport(transport: Transport): winston.Transport {
-    class CustomWinstonTransport extends winston.Transport {
+  private createWinstonTransport(transport: Transport): winston.transport {
+    class CustomWinstonTransport extends winston.transport {
       constructor(private customTransport: Transport) {
         super({ silent: false });
       }
