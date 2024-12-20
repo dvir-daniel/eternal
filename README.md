@@ -70,9 +70,7 @@ Here is an example of how to use Eternal:
 In your project directory, create a file named eternal.ts and add the following code:
 
 ```typescript
-import { Eternal } from '@eternal-js/core';
-import { AnalyticsModule } from '@eternal-js/analytics';
-import { AuthModule } from '@eternal-js/auth';
+import { Eternal, AnalyticsModule, AuthModule } from '@eternal-js/core';
 import { MixPanelAdapter } from '@eternal-js/mixpanel-adapter';
 import { AuthJsAdapter } from '@eternal-js/auth-adapter';
 
