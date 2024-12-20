@@ -13,6 +13,13 @@ Eternal is a modular framework that empowers developers to integrate third-party
 
 </div>
 
+<h3 align="center">
+  <a href="https://eternaljs.com">Website</a>
+  | <a href="https://demo.eternaljs.com">Demo</a>
+  | <a href="https://docs.eternaljs.com">Docs</a>
+  | <a href="https://discord.gg/pTmBqXpw">Our Discord</a>
+</h3>
+
 <br />
 
 ## Short Story - **The Developer’s Dilemma**
