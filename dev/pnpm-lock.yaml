@@ -30,6 +30,9 @@ importers:
       winston:
         specifier: ^3.0.0
         version: 3.17.0
+      winston-transport:
+        specifier: ^3.0.0
+        version: 3.2.1
     devDependencies:
       eslint:
         specifier: ^8.0.0
@@ -3686,6 +3689,9 @@ packages:
     resolution: {integrity: sha512-hUrmaWBdVDcxvYqnyh09zunKzROWjbZTiNy8dBEjkS7ehEDQibXJ7XvlmtbwuTclUiIyN+CyXQD4Vmko8fNm8w==}
     engines: {node: '>=8'}
     hasBin: true
+
+  winston-transport@3.2.1:
+    resolution: {integrity: sha512-WPqbdAmMK/kfWCWKM2bA1o997wWPZ0jg5NpO8JPqoaDZgCiZnFpIEddcf7Ur4UZV2sYRUdySVBWKx0+gQQ/jrg==}
 
   winston-transport@4.9.0:
     resolution: {integrity: sha512-8drMJ4rkgaPo1Me4zD/3WLfI/zPdA9o2IipKODunnGDcuqbHwjsbB79ylv04LCGGzU0xQ6vTznOMpQGaLhhm6A==}
@@ -7425,6 +7431,10 @@ snapshots:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
+
+  winston-transport@3.2.1:
+    dependencies:
+      logform: 2.7.0
 
   winston-transport@4.9.0:
     dependencies:
